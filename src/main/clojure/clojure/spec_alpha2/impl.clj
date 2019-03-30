@@ -361,7 +361,7 @@
                         (let [sub-schema (vec (some-> schema-obj keyspecs keys))
                               sub-selection (get sub-selects % [])]
                           (s/spec* `(s/select ~sub-schema ~sub-selection))))
-                      (s/spec* `(s/select ~(vec))))
+                      (s/spec* `(s/select [])))
                   (get key-specs %))
         opt-kset (set/difference (set/union (-> key-specs keys set)
                                             (-> sub-selects keys set))
